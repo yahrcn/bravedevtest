@@ -1,6 +1,11 @@
 import Router, { useRouter } from "next/router";
 import Head from "next/head";
-import { Label, Input, DivBackground, Button } from "../cssComponents";
+import {
+    Label,
+    Input,
+    DivBackground,
+    Button,
+} from "../../styles/cssComponents";
 
 export default function OperatorForm() {
     const router = useRouter();

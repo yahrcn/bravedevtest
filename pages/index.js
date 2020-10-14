@@ -6,7 +6,7 @@ import {
     ListItemImage,
     Title,
     SubTitle,
-} from "./cssComponents";
+} from "../styles/cssComponents";
 
 const operatorsList = [
     { title: "МТС", icon: "/images/mts.png" },
