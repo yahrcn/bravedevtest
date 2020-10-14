@@ -11,7 +11,8 @@ export default function OperatorForm() {
     const router = useRouter();
     const { OperatorForm } = router.query;
 
-    const pay = () => {
+    const pay = (e) => {
+        e.preventDefault();
         let random = Math.random();
         if (random >= 0.5) {
             alert("Успешно");
