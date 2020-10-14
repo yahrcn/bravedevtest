@@ -50,6 +50,9 @@ export const Label = styled.label`
     font-size: 12pt;
     letter-spacing: 0.05em;
     color: #2a293e;
+    @media (max-width: 768px) {
+        font-size: 0.85em;
+    }
 `;
 
 export const Input = styled.input`

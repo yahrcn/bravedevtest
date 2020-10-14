@@ -5,7 +5,7 @@ import {
     Input,
     DivBackground,
     Button,
-} from "../../styles/cssComponents";
+} from "../../public/styles/cssComponents";
 
 export default function OperatorForm() {
     const router = useRouter();
@@ -13,11 +13,20 @@ export default function OperatorForm() {
 
     const pay = (e) => {
         e.preventDefault();
-        let random = Math.random();
-        if (random >= 0.5) {
-            alert("Успешно!");
-            Router.back();
-        } else alert("Ошибка!");
+        const requestOptions = {
+            method: "POST",
+            body: new FormData(e.target),
+        };
+        fetch("/api/payment", requestOptions).then((response) => {
+            if (!response.ok) {
+                response.json().then((data) => alert(data.title));
+            } else {
+                response.json().then((data) => {
+                    alert(data.title);
+                    Router.back();
+                });
+            }
+        });
     };
 
     return (
