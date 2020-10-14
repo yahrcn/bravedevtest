@@ -15,9 +15,9 @@ export default function OperatorForm() {
         e.preventDefault();
         let random = Math.random();
         if (random >= 0.5) {
-            alert("Успешно");
+            alert("Успешно!");
             Router.back();
-        } else alert("Ошибка");
+        } else alert("Ошибка!");
     };
 
     return (
