@@ -13,7 +13,7 @@ export default function OperatorForm() {
 
     const pay = () => {
         let random = Math.random();
-        if (random === 1) {
+        if (random >= 0.5) {
             alert("Успешно");
             Router.back();
         } else alert("Ошибка");
