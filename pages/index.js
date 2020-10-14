@@ -9,7 +9,7 @@ import {
 } from "../styles/cssComponents";
 
 const operatorsList = [
-    { title: "МТС", icon: "/images/mts.png" },
+    { title: "МТС", icon: "/images/MTS.png" },
     { title: "Билайн", icon: "/images/beeline.png" },
     { title: "Мегафон", icon: "/images/megafon.png" },
 ];
