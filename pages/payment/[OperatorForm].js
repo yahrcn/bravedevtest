@@ -2,7 +2,7 @@ import Router, { useRouter } from "next/router";
 import Head from "next/head";
 import { Label, Input, DivBackground, Button } from "../cssComponents";
 
-const OperatorForm = () => {
+export default function OperatorForm() {
     const router = useRouter();
     const { OperatorForm } = router.query;
 
@@ -101,6 +101,4 @@ const OperatorForm = () => {
             `}</style>
         </div>
     );
-};
-
-export default OperatorForm;
+}
