@@ -17,15 +17,10 @@ export default function OperatorForm() {
             method: "POST",
             body: new FormData(e.target),
         };
-        fetch("/api/payment", requestOptions).then((response) => {
-            if (!response.ok) {
-                response.json().then((data) => alert(data.title));
-            } else {
-                response.json().then((data) => {
-                    alert(data.title);
-                    Router.back();
-                });
-            }
+        fetch("/api/payment", requestOptions).then(async (response) => {
+            const json = await response.json();
+            alert(json.title);
+            if (response.ok) Router.back();
         });
     };
 
