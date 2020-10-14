@@ -11,3 +11,5 @@ function func(s, a, b) {
 ```
 
 Тестовое задание 2:
+
+Демо: https://bravedevtest-531i1txrv.vercel.app/
