@@ -1,17 +1,21 @@
 import Router, { useRouter } from "next/router";
+import { FC } from "react";
 import Head from "next/head";
 import {
+    GlobalStyle,
     Label,
     Input,
     DivBackground,
     Button,
-} from "../../public/styles/cssComponents";
+} from "../../static/cssComponents";
 
-export default function OperatorForm() {
+import { operatorsList } from "../../static/operatorsList";
+
+export const OperatorForm: FC = () => {
     const router = useRouter();
     const { OperatorForm } = router.query;
 
-    const pay = (e) => {
+    const onPayClick = (e: any) => {
         e.preventDefault();
         const requestOptions = {
             method: "POST",
@@ -26,6 +30,7 @@ export default function OperatorForm() {
 
     return (
         <div className="container">
+            <GlobalStyle />
             <Head>
                 <title>Brave Developers окно оплаты</title>
                 <link
@@ -43,7 +48,7 @@ export default function OperatorForm() {
                     >
                         Назад
                     </Button>
-                    <form onSubmit={pay}>
+                    <form onSubmit={onPayClick}>
                         <Label htmlFor="customerOperator">
                             Ваш выбранный оператор
                         </Label>
@@ -52,7 +57,7 @@ export default function OperatorForm() {
                             type="text"
                             id="customerOperator"
                             name="customerOperator"
-                            value={OperatorForm}
+                            value={operatorsList[OperatorForm].title}
                             readOnly
                             required
                         />
@@ -83,32 +88,8 @@ export default function OperatorForm() {
                     </form>
                 </DivBackground>
             </main>
-
-            <style jsx>{`
-                .container {
-                    min-height: 100vh;
-                    padding: 0 0.5rem;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                main {
-                    padding: 5rem 0;
-                    flex: 1;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                }
-                * {
-                    font-family: "Spartan", sans-serif;
-                }
-                em {
-                    color: red;
-                }
-            `}</style>
         </div>
     );
-}
+};
+
+export default OperatorForm;
