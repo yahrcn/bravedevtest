@@ -57,7 +57,7 @@ export const OperatorForm: FC = () => {
                             type="text"
                             id="customerOperator"
                             name="customerOperator"
-                            value={operatorsList[OperatorForm[0]].title}
+                            value={operatorsList[OperatorForm].title}
                             readOnly
                             required
                         />
